@@ -3,4 +3,4 @@ if __name__ == '__main__':
     arr = map(int, input().split())
 
     newArr = list(dict.fromkeys(sorted(arr)))
-    print(newArr[2])
+    print(newArr[-2])
