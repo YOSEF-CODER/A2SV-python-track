@@ -5,7 +5,7 @@ class Solution:
         """
         
         j = 0
-        for i in range(len(nums1)-m):
+        for i in range(n):
             nums1[m] = nums2[j]
             j = j +1
             m = m+1
