@@ -3,7 +3,7 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        i = m
+        
         j = 0
         for i in range(len(nums1)-m):
             nums1[m] = nums2[j]
