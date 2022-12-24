@@ -1,6 +1,6 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 from collections import Counter
-def solve(shoe_sizes, number_customer):
+def _total_price(shoe_sizes, number_customer):
     
     # we need counter
     counter = Counter(shoe_sizes)
@@ -21,5 +21,5 @@ if __name__=="__main__":
     shoe_sizes = list(map(int, input().split()))
     number_customers = int(input())
     
-    answer = solve(shoe_sizes, number_customers)
+    answer =_total_price(shoe_sizes, number_customers)
     print(answer)
