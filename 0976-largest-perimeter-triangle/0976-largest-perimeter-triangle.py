@@ -6,7 +6,7 @@ class Solution:
             b = nums[-2-i]
             c = nums[-1-i]
             if a + b > c:
-                return a + b + c  
+                return a + b + c
         return 0
 
 
