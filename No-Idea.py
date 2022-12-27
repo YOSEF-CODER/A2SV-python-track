@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n, m = input().split()
+sc_ar = input().split()
+
+A = set(input().split())
+B=  set(input().split())
+
+C=sum([(i in A) - (i in B) for i in sc_ar])
+
+print(C)
