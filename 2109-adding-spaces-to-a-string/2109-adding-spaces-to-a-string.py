@@ -1,9 +1,6 @@
 class Solution:
     def addSpaces(self, s: str, spaces: List[int]) -> str:
-   
-        string = []
-        
-       
+        string = []   
         left = 0
         
        
