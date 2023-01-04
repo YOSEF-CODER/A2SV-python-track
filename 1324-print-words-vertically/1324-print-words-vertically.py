@@ -3,13 +3,10 @@ class Solution:
         max_str_len=0
         words=s.split()
         li=[]
-        length=len(words)
-        words_v=[]
-        
+              
         for x in words:
             max_str_len=max(max_str_len,len(x))
             
-        print(max_str_len)
         
         j=0
         for x in range(max_str_len):
@@ -27,13 +24,7 @@ class Solution:
         return(li)
         
         
-        
-        # for i in range(len(li)):
-        #     w=''
-        #     for j in range(i,length):
-        #         w+=li[i]
-        #     words_v.append(w)
-        # print(words_v)
+     
       
 
 
