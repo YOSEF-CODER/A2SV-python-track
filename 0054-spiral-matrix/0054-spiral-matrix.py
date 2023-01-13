@@ -11,9 +11,6 @@ class Solution:
             #right
             element += [mat.pop() for mat in matrix] 
             
-            
-            
-            
             if not matrix or not matrix[0]: 
                 break
              
