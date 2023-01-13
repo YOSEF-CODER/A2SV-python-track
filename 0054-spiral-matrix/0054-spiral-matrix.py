@@ -13,7 +13,6 @@ class Solution:
             
             if not matrix or not matrix[0]: 
                 break
-             
    
             #bottom
             # if matrix:
