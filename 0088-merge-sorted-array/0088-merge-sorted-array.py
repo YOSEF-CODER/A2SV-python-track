@@ -6,7 +6,6 @@ class Solution:
         left_pointer = m - 1
         right_pointer = n - 1
         zero_pointer = m + n - 1
-        
         while right_pointer >= 0:
             if left_pointer >= 0:
                 if nums1[left_pointer] > nums2[right_pointer]:
