@@ -10,21 +10,21 @@ class MyLinkedList:
         self.head = None
         
     def printAll(self)-> None:
-        temp = self.head
-        while temp:
-            print(temp.val)
-            temp = temp.next
+        cur = self.head
+        while cur:
+            print(cur.val)
+            cur = cur.next
         print('done')
         
     def get(self, index: int) -> int:
-        temp = self.head
+        cur = self.head
         for i in range(index):    
-            temp = temp.next
-            if temp == None:
+            cur = cur.next
+            if cur == None:
                 return -1
-        if temp == None:
+        if cur == None:
             return -1
-        return temp.val 
+        return cur.val 
         
 
     def addAtHead(self, val: int) -> None:
@@ -33,9 +33,9 @@ class MyLinkedList:
             self.head = Node(val)
         else:
             newNode = Node(val)
-            temp = self.head
+            cur = self.head
             self.head = newNode
-            self.head.next = temp
+            self.head.next = cur
             newNode = None
         
 
@@ -44,10 +44,10 @@ class MyLinkedList:
         if self.head == None:
             self.head = Node(val)
             return
-        temp = self.head
-        while temp.next:
-            temp = temp.next
-        temp.next = Node(val)
+        cur = self.head
+        while cur.next:
+            cur = cur.next
+        cur.next = Node(val)
             
             
     def addAtIndex(self, index: int, val: int) -> None:
@@ -60,16 +60,16 @@ class MyLinkedList:
         #if no head then
         if self.head == None:
             return
-        temp = self.head
+        cur = self.head
         for i in range(index-1):
-            if  temp == None:
+            if  cur == None:
                 return
-            temp = temp.next
-        if temp == None:
+            cur = cur.next
+        if cur == None:
             return
-        before = temp.next
-        temp.next = Node(val)
-        temp.next.next = before
+        before = cur.next
+        cur.next = Node(val)
+        cur.next.next = before
                 
                 
 
@@ -78,16 +78,16 @@ class MyLinkedList:
             if self.head:
                 self.head = self.head.next
                 return
-        temp = self.head
+        cur = self.head
         for i in range(index-1):
-            if temp == None:
+            if cur == None:
                 return
-            temp = temp.next
-        if temp == None:
+            cur = cur.next
+        if cur == None:
             return
-        toDelete = temp.next
+        toDelete = cur.next
         if toDelete:
-            temp.next = temp.next.next
+            cur.next = cur.next.next
         toDelete = None
 
         
