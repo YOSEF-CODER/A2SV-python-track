@@ -28,7 +28,7 @@ class MyLinkedList:
         
 
     def addAtHead(self, val: int) -> None:
-        #if no recorded element just add the new val as a head else move the head to the next element and make the new node the head
+
         if not self.head:
             self.head = Node(val)
         else:
@@ -40,7 +40,7 @@ class MyLinkedList:
         
 
     def addAtTail(self, val: int) -> None:
-        #fist reach the end of the node and then the last node next will be the new node
+      
         if self.head == None:
             self.head = Node(val)
             return
@@ -51,13 +51,13 @@ class MyLinkedList:
             
             
     def addAtIndex(self, index: int, val: int) -> None:
-        #if index 0 just add as a first element
+       
         if index == 0:
             newNode = Node(val)
             newNode.next = self.head
             self.head = newNode
             return
-        #if no head then
+       
         if self.head == None:
             return
         cur = self.head
