@@ -14,5 +14,4 @@ class Solution:
             return tree_to_list(root.left) + [root.val] + tree_to_list(root.right) 
         
         tree_list = tree_to_list(root)
-        # print(tree_list)
         return tree_list[k-1]
