@@ -3,11 +3,25 @@ class Solution:
         
         ans=[]
 
-        def backtrack(idx,arr):
-            ans.append(arr[:])
+
+
+        def backtrack(idx,path):
+            ans.append(path[:])
 
             for i in range(idx,len(nums)):
-                backtrack(i+1,arr+[nums[i]])
+                backtrack(i+1,path+[nums[i]])
+
+        # backtrack(0,[])
+
+            # if idx>=len(nums):
+            #     ans.append(path[:])
+            #     return
+
+            # path.append(nums[idx])
+            # backtrack(idx+1,path)
+            # path.pop()
+            # backtrack(idx+1,path)
+
 
         backtrack(0,[])
         return ans
