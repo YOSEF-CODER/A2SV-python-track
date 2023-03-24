@@ -5,8 +5,11 @@ class Solution:
         temp=0
 
         while i < n:
+
             cp=nums[i]
+
             if cp != i:
+
                 if cp==len(nums):
                     temp=cp
                     i+=1
@@ -16,7 +19,9 @@ class Solution:
             else:
                 i+=1
 
+
         if temp==0:
             return len(nums)
+
         else:
             return nums.index(temp)
