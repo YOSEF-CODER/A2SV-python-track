@@ -5,23 +5,21 @@ class Solution:
 
 
 
-        def backtrack(idx,path):
-            ans.append(path[:])
+        def backtrack(idx,mask):
+            subset=[]
+
+            for i in range(len(nums)):
+                if mask&(1<<i):
+                    subset.append(nums[i])
+
+            ans.append(subset[:])
 
             for i in range(idx,len(nums)):
-                backtrack(i+1,path+[nums[i]])
-
-        # backtrack(0,[])
-
-            # if idx>=len(nums):
-            #     ans.append(path[:])
-            #     return
-
-            # path.append(nums[idx])
-            # backtrack(idx+1,path)
-            # path.pop()
-            # backtrack(idx+1,path)
+                mask |= (1<<i)
+                backtrack(i+1,mask)
+                mask &= ~(1<<i)
 
 
-        backtrack(0,[])
+
+        backtrack(0,0)
         return ans
