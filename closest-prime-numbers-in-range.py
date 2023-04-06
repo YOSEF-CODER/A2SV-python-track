@@ -3,6 +3,9 @@ class Solution:
 
         primes=[]
 
+
+        ans = []
+
         def isPrime(num: int) -> bool:
             if num < 2:
                 return False
@@ -16,7 +19,7 @@ class Solution:
             return True
 
 
-        ans = []
+   
 
         for i in range(left, right + 1):
             if isPrime(i):
@@ -34,4 +37,7 @@ class Solution:
                         ans = [primes[-2], primes[-1]]
         
        
-        return ans if ans else [-1, -1]
+        if ans:
+            return ans
+        else:
+            return [-1,-1]
