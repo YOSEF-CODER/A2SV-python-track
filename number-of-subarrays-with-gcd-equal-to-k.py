@@ -9,9 +9,9 @@ class Solution:
 
         for i in range(len(nums)):
             curgcd=nums[i]
-            if curgcd==k:
-                res+=1
-            for j in range(i+1,len(nums)):
+            # if curgcd==k:
+            #     res+=1
+            for j in range(i,len(nums)):
                 curgcd=gcd(curgcd,nums[j])
                 if curgcd==k:
                     res+=1
