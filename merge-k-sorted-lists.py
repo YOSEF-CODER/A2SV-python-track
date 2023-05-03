@@ -12,8 +12,10 @@ class Solution:
 
         for index,sortedList in enumerate(lists):
             if sortedList:
-                heappush(heap,(sortedList.val,index,sortedList))
+              heap.append((sortedList.val,index,sortedList))
 
+        heapify(heap)
+        
         while heap:
             val,index,node=heappop(heap)
             head.next=node
