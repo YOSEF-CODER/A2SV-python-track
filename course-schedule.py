@@ -1,29 +1,27 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        adjList=defaultdict(list)
-        orderedCourses=[]
-        indegree=[0]*numCourses
+        graph=defaultdict(list)
+        result=[]
+        in_degree=[0]*numCourses
 
         for a,b in prerequisites:
-            adjList[b].append(a)
-            indegree[a]+=1
+            graph[b].append(a)
+            in_degree[a]+=1
 
-        queue=deque()
+         # Initialize the queue with nodes having no incoming edges
+        queue = deque([node for node in graph if in_degree[node] == 0])
 
-        for i in range(numCourses):
-            if indegree[i]==0:
-                queue.append(i)
 
         while queue:
-            for _ in range(len(queue)):
-                node=queue.popleft()
-                orderedCourses.append(node)
+            node=queue.popleft()
+            result.append(node)
 
-                for course in adjList[node]:
-                    indegree[course]-=1
-                    if indegree[course]==0:
-                        queue.append(course)
-        for dep in indegree:
+            for i in graph[node]:
+                in_degree[i]-=1
+                if in_degree[i]==0:
+                    queue.append(i)
+
+        for dep in in_degree:
             if dep:
                 return False
         return True
