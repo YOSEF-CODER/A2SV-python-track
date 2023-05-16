@@ -1,7 +1,7 @@
 class Solution:
     def checkIfPrerequisite(self, n: int, prerequisites: List[List[int]], queries: List[List[int]]) -> List[bool]:
         
-        res = [set() for _ in range(n)]
+        result = [set() for _ in range(n)]
         indeg = [0] * (n)
         graph = defaultdict(list)
         q = deque()
@@ -10,21 +10,20 @@ class Solution:
             graph[a].append(b)
             indeg[b] += 1
 
-        for i in range(n):
-            if not indeg[i]:
-                q.append(i)
-
+        q = deque([node for node in graph if indeg[node] == 0])
         while q:
-            cur = q.popleft()
-            for nbr in graph[cur]:
-                res[nbr].add(cur)
-                for el in res[cur]:
-                    res[nbr].add(el)
+            node = q.popleft()
+            for nbr in graph[node]:
+                result[nbr].add(node)
+                for el in result[node]:
+                    result[nbr].add(el)
                 indeg[nbr] -= 1
                 if not indeg[nbr]:
                     q.append(nbr)
+
+        
         ans = []
         for u, v in queries:
-            ans.append(u in res[v])
+            ans.append(u in result[v])
 
         return ans
