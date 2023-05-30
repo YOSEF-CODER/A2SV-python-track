@@ -1,16 +1,11 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
 
-        def climb(n, memo={}):
-            if n in memo:
-                return memo[n]
-            
-            if n < 0:
-                return 0
-            elif n == 0 or n==1:
-                return 1
-
-            memo[n] = climb(n-1,memo) + climb(n-2,memo)
+        memo = {} 
+        def dp(n: int) -> int:
+            if n < 3:
+                return n
+            if n not in memo:
+                memo[n] = dp(n - 1) + dp(n - 2)
             return memo[n]
-            
-        return climb(n)
+        return dp(n)
